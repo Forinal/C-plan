@@ -50,14 +50,14 @@ int main(int argc, char **argv)
     printf("5. ListLength_Sq Test...\n");
     {
         i = ListLength_Sq(L);
-        printf("length : %d \n",i);
+        printf("length : %d \n\n",i);
     }
     PressEnter;
 
     printf("6. ListDelete_Sq Test...\n");
     {
         ListDelete_Sq(&L,6,&e);
-        printf("Delete sixth elem \"%d\"", e);
+        printf("Delete sixth elem \"%d\"\n", e);
         ListTraverse_Sq(L,PrintElem);
         printf("\n");
     }
@@ -66,7 +66,7 @@ int main(int argc, char **argv)
     printf("7. GetElem_Sq Test...\n");
     {
         GetElem_Sq(L,4,&e);
-        printf("The 4th elem is \"%d\"", e);
+        printf("The 4th elem is \"%d\"\n", e);
         printf("\n");
     }
     PressEnter;
@@ -101,7 +101,7 @@ int main(int argc, char **argv)
         ListEmpty_Sq(L) ? printf("L is empty\n") : printf("L is not empty\n");
         ClearList_Sq(&L);
         printf("After clear\n");
-        ListEmpty_Sq(L) ? printf("L is empty") : printf("L is not empty");
+        ListEmpty_Sq(L) ? printf("L is empty\n") : printf("L is not empty\n");
         printf("\n");
     }
     PressEnter;
@@ -109,10 +109,10 @@ int main(int argc, char **argv)
     printf("12. DestroyList_Sq Test...\n");
     {
         printf("Before destroy\n");
-        L.elem ? printf("L is empty\n") : printf("L is not empty\n");
+        L.elem ? printf("L exist\n") : printf("L not exist\n");
         DestoryList_Sq(&L);
-        printf("After destroy");
-        L.elem ? printf("L is empty") : printf("L is not empty");
+        printf("After destroy\n");
+        L.elem ? printf("L exist\n") : printf("L not exist\n");
         printf("\n");
     }
     PressEnter;
@@ -127,5 +127,5 @@ Status CmpGreater(LElemType_Sq e,LElemType_Sq data)
 
 void PrintElem(LElemType_Sq e)
 {
-    printf("%d", e);
+    printf("%d\n", e);
 }

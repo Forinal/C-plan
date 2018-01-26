@@ -18,4 +18,13 @@
 
 typedef int Status;
 
+
+#define PressEnter\
+{\
+    fflush(stdin);\
+    printf("Press Enter...");\
+    getchar();\
+    fflush(stdin);\
+}
+
 #endif // STATUS_H
