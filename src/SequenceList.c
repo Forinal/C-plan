@@ -1,37 +1,35 @@
+#ifndef SEQUENCELIST_C
+#define SEQUENCELIST_C
+
 #include "SequenceList.h"
 
-int InitList_Sq(SqList *L)
+Status InitList_Sq(SqList *L)
 {
-    L->elem = (LElemType_Sq*)malloc(LIST_INIT_SIZE*sizeof(LElemType_Sq));
-    if (!L->elem)
-    {
-        return ERROR;
-    }
-
-    L->length = 0;
-    L->listsize = LIST_INIT_SIZE;
+    (*L).elem = (LElemType_Sq*)malloc(LIST_INIT_SIZE*sizeof(LElemType_Sq));
+    if(!(*L).elem)
+        exit(OVERFLOW);
+    (*L).length = 0;
+    (*L).listsize = LIST_INIT_SIZE;
+    return OK;
 }
 
-void ClearList_Sq(SqList* L)
+void ClearList_Sq(SqList *L)
 {
-    L->length = 0;
+    (*L).length = 0;
 }
 
-void DestoryList_Sq(SqList* L)
+void DestoryList_Sq(SqList *L)
 {
-    (*L).elem = NULL;
+    free((*L).elem);
+    (*L).elem = NULL;   //释放内存后置空指针
     (*L).length = 0;
     (*L).listsize = 0;
 }
 
-int ListEmpty_Sq(SqList L)
+Status ListEmpty_Sq(SqList L)
 {
-    if (L.length == 0)
-    {
-        return OK;
-    }
-
-    return NO;
+    //判空
+    return L.length==0?TRUE:FALSE;
 }
 
 int ListLength_Sq(SqList L)
@@ -39,127 +37,99 @@ int ListLength_Sq(SqList L)
     return L.length;
 }
 
-int GetElem_Sq(SqList L, int i, LElemType_Sq* e)
+Status GetElem_Sq(SqList L,int i,LElemType_Sq *e)
 {
-    if (i < 0 || i > L.length)
-    {
-        return ERROR;
-    }
-
-    *e = L.elem[i-1];
-
+    if(i<0||i>L.length)
+         return ERROR;
+    else
+        *e = L.elem[i];
     return OK;
 }
 
-int LocateElem_Sq(SqList L, LElemType_Sq e, int(Compare)(LElemType_Sq, LElemType_Sq))
+int LocateElem_Sq(SqList L,LElemType_Sq e,Status(Compare)(LElemType_Sq,LElemType_Sq))
 {
-    for (int i = 0; i < L.length; i++)
-    {
-        if (Compare(e,L.elem[i]) == YES)
-        {
-            return i+1;
-        }
-    }
-
-    return ERROR;
+   int i = 1;
+   while(i<=L.length&&!Compare(e,L.elem[i-1]))
+        ++i;
+   if(i<=L.length)
+     return i;
+   else
+     return 0;
 }
 
-int PriorElem_Sq(SqList L, LElemType_Sq cur, LElemType_Sq* pre)
+Status PriorElem_Sq(SqList L,LElemType_Sq cur_e,LElemType_Sq *pre_e)
 {
-    if (cur == L.elem[0])
+    int i = 1;
+    if(L.elem[0]!=cur_e)
     {
-        return ERROR;
-    }
-
-    for (int i = 0; i < L.length; i++)
-    {
-        if (cur == L.elem[i])
+        while(i<L.length&&L.elem[i]!=cur_e)
+            ++i;
+        if(i<L.length)
         {
-            *pre = L.elem[i-1];
+            *pre_e = L.elem[i-1];
             return OK;
         }
     }
-
     return ERROR;
 }
 
-int NextElem_Sq(SqList L, LElemType_Sq cur, LElemType_Sq* next)
+Status NextElem_Sq(SqList L,LElemType_Sq cur_e,LElemType_Sq *next_e)
 {
-    if (cur == L.elem[L.length])
+    int i = 0;
+    while(i<L.length&&L.elem[i]!= cur_e)
+        ++i;
+    if(i<L.length-1)
     {
+        next_e = L.elem[i+1];
+        return OK;
+    }
+    else
         return ERROR;
-    }
-
-    for (int i = 0; i < L.length; i++)
-    {
-        if (cur == L.elem[i])
-        {
-            *next = L.elem[i+1];
-            return OK;
-        }
-    }
-
-    return ERROR;
 }
 
-int ListInsert_Sq(SqList *L, int i, LElemType_Sq e)
+Status ListInsert_Sq(SqList *L,int i,LElemType_Sq e)
 {
-    if (i < 0 || i > L->length + 1)
-    {
+    LElemType_Sq *newbase;
+    LElemType_Sq *p,*q;
+    if(i<1 ||i>(*L).length+1)
         return ERROR;
-    }
-
-    if (L->length + 1 > L->listsize)
+    if((*L).length >= (*L).listsize)
     {
-        LElemType_Sq newbase = (LElemType_Sq*)realloc((*L).elem, (L->listsize + LISTINCREMENT)*sizeof(LElemType_Sq));
-        if (!newbase)
-        {
+        newbase = (LElemType_Sq*)realloc((*L).elem,((*L).listsize+LIST_INIT_SIZE)*sizeof(LElemType_Sq));
+        //开辟新空间
+        if(!newbase)
             exit(OVERFLOW);
-        }
-
-        L->elem = newbase;
-        L->listsize += LISTINCREMENT;
+        (*L).elem = newbase;
+        (*L).listsize +=LISTINCREMENT;
     }
-
-    for (int j = L->length; j >= i; j--)
-    {
-        L->elem[j+1] = L->elem[j];
-    }
-
-    (*L).elem[i-1] = e;
+    q = &(*L).elem[i-1];
+    for(p=&(*L).elem[(*L).length-1];p>=q;--p)
+        *(p+1) = *p;
+    *q = e;
     (*L).length++;
-
     return OK;
 }
 
-int ListDelete_Sq(SqList* L, int i, LElemType_Sq* e)
+Status ListDelete_Sq(SqList *L,int i,LElemType_Sq *e)
 {
-    if (i < 0 || i>L->length)
-    {
+    int j;
+    LElemType_Sq *q,*p;
+    if(i<0||i>(*L).length-1)
         return ERROR;
-    }
-
-    *e = (*L).elem[i-1];
-
-    if (i == L->length)
-    {
-        L->elem[i-1] = NULL;
-    }
-
-    for (int j = i; j < L->length; j++)
-    {
-        L->elem[j-1] = L->elem[j];
-    }
-
-    L->length--;
-}
-
-int ListTraverse_Sq(SqList L, void(Visit)(LelemType_Sq))
-{
-    for (int i = 0; i < L.length; i++)
-    {
-        Visit(L.elem[i]);
-    }
-
+    p = &(*L).elem[i-1];
+    *e = *p;
+    q = (*L).elem+(*L).length-1;
+    for(++p;p<=q;++p)
+        *(p-1) = p;
+    (*L).length--;
     return OK;
 }
+
+Status ListTraverse_Sq(SqList L,void(Visit)(LElemType_Sq))
+{
+    int i;
+    for(i=0;i<L.length;i++)
+        Visit(L.elem[i]);
+    return OK;
+}
+#endif // SEQUENCELIST_C
