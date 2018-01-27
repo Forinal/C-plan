@@ -34,12 +34,15 @@
 			<Add option="-Wall" />
 		</Compiler>
 		<Unit filename="include/SequenceList.h" />
+		<Unit filename="include/SinglyLinkedList.h" />
+		<Unit filename="include/Status.h" />
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="src/SequenceList.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="src/SinglyLinkedList.cpp" />
 		<Extensions>
 			<code_completion />
 			<debugger />
