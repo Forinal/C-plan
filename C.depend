@@ -1,18 +1,18 @@
 # depslib dependency file v1.0
-1516957974 source:c:\users\wangx\documents\code blocks\c\main.c
+1517039241 source:c:\users\wangx\documents\code blocks\c\main.c
 	<stdio.h>
 	<stdlib.h>
 	"SequenceList.h"
 
-1516957861 source:c:\users\wangx\documents\code blocks\c\src\sequencelist.c
+1517039241 source:c:\users\wangx\documents\code blocks\c\src\sequencelist.c
 	"SequenceList.h"
 
-1516948420 c:\users\wangx\documents\code blocks\c\include\sequencelist.h
+1517039241 c:\users\wangx\documents\code blocks\c\include\sequencelist.h
 	<stdio.h>
 	<stdlib.h>
 	"Status.h"
 
-1516951856 c:\users\wangx\documents\code blocks\c\include\status.h
+1517039241 c:\users\wangx\documents\code blocks\c\include\status.h
 
 1517037328 source:c:\users\wangx\documents\code blocks\c\src\singlylinkedlist.c
 	"SinglyLinkedList.h"
@@ -21,4 +21,10 @@
 	<stdio.h>
 	<stdlib.h>
 	"Status.h"
+
+1517039541 source:c:\users\wangx\documents\code blocks\c\scanf.c
+	<stdio.h>
+	<string.h>
+	<stdarg.h>
+	<ctype.h>
 
