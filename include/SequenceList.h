@@ -43,6 +43,6 @@ int ListInsert_Sq(SqList *L, int i, LElemType_Sq e);
 
 int ListDelete_Sq(SqList *L, int i, LElemType_Sq *e);
 
-int ListTraverse_Sq(SqList L, void(Visit)(LelemType_Sq));
+int ListTraverse_Sq(SqList L, void(Visit)(LElemType_Sq));
 
 #endif // SEQUENCELIST_H

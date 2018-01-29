@@ -4,6 +4,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "Status.h"
+#include "Scanf.h"
 
 #ifndef BANKQUEUING_H
 typedef int LElemType_L;

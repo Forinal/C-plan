@@ -1,30 +1,60 @@
 # depslib dependency file v1.0
-1517039241 source:c:\users\wangx\documents\code blocks\c\main.c
+1517040776 source:c:\users\wangx\documents\code blocks\c\main.c
 	<stdio.h>
 	<stdlib.h>
 	"SequenceList.h"
 
-1517039241 source:c:\users\wangx\documents\code blocks\c\src\sequencelist.c
+1517041296 source:c:\users\wangx\documents\code blocks\c\src\sequencelist.c
 	"SequenceList.h"
 
-1517039241 c:\users\wangx\documents\code blocks\c\include\sequencelist.h
+1517206880 c:\users\wangx\documents\code blocks\c\include\sequencelist.h
 	<stdio.h>
 	<stdlib.h>
 	"Status.h"
 
-1517039241 c:\users\wangx\documents\code blocks\c\include\status.h
+1517040776 c:\users\wangx\documents\code blocks\c\include\status.h
 
-1517037328 source:c:\users\wangx\documents\code blocks\c\src\singlylinkedlist.c
+1517207207 source:c:\users\wangx\documents\code blocks\c\src\singlylinkedlist.c
 	"SinglyLinkedList.h"
 
-1517037282 c:\users\wangx\documents\code blocks\c\include\singlylinkedlist.h
+1517137520 c:\users\wangx\documents\code blocks\c\include\singlylinkedlist.h
 	<stdio.h>
 	<stdlib.h>
 	"Status.h"
+	"Scanf.h"
 
 1517039541 source:c:\users\wangx\documents\code blocks\c\scanf.c
 	<stdio.h>
 	<string.h>
 	<stdarg.h>
 	<ctype.h>
+
+1517131961 source:c:\users\wangx\documents\code blocks\c\src\scanf.c
+	<stdio.h>
+	<string.h>
+	<stdarg.h>
+	<ctype.h>
+
+1517131961 c:\users\wangx\documents\code blocks\c\src\scanf.c
+	<stdio.h>
+	<string.h>
+	<stdarg.h>
+	<ctype.h>
+
+1517040776 c:\users\wangx\documents\code blocks\c\/src\scanf.c
+	<stdio.h>
+	<string.h>
+	<stdarg.h>
+	<ctype.h>
+
+1517138017 c:\users\wangx\documents\code blocks\c\include\scanf.h
+	<stdio.h>
+	<string.h>
+	<stdarg.h>
+	<ctype.h>
+
+1517214201 source:c:\users\wangx\documents\code blocks\c\signlylinkedlist.main.c
+	<stdio.h>
+	<stdlib.h>
+	"SinglyLinkedList.h"
 
