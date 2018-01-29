@@ -42,10 +42,15 @@
 		<Unit filename="TestData_TL.txt">
 			<Option target="&lt;{~None~}&gt;" />
 		</Unit>
+		<Unit filename="include/MergeList.h" />
 		<Unit filename="include/Scanf.h" />
 		<Unit filename="include/SequenceList.h" />
 		<Unit filename="include/SinglyLinkedList.h" />
+		<Unit filename="include/StaticLinkedList.h" />
 		<Unit filename="include/Status.h" />
+		<Unit filename="src/MergeList.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="src/Scanf.c">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -53,6 +58,9 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="src/SinglyLinkedList.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/StaticLinkedList.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Extensions>
