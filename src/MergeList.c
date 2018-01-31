@@ -1,11 +1,6 @@
 #include "MergeList.h"
 
-MergeList::MergeList()
+void MergeList_L(LinkList La, LinkList* Lb, LinkList* Lc)
 {
-    //ctor
-}
 
-MergeList::~MergeList()
-{
-    //dtor
 }

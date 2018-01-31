@@ -1,10 +1,10 @@
 # depslib dependency file v1.0
-1517040776 source:c:\users\wangx\documents\code blocks\c\main.c
+1517386307 source:c:\users\wangx\documents\code blocks\c\main.c
 	<stdio.h>
 	<stdlib.h>
 	"SequenceList.h"
 
-1517041296 source:c:\users\wangx\documents\code blocks\c\src\sequencelist.c
+1517386644 source:c:\users\wangx\documents\code blocks\c\src\sequencelist.c
 	"SequenceList.h"
 
 1517206880 c:\users\wangx\documents\code blocks\c\include\sequencelist.h
@@ -14,7 +14,7 @@
 
 1517040776 c:\users\wangx\documents\code blocks\c\include\status.h
 
-1517207207 source:c:\users\wangx\documents\code blocks\c\src\singlylinkedlist.c
+1517214238 source:c:\users\wangx\documents\code blocks\c\src\singlylinkedlist.c
 	"SinglyLinkedList.h"
 
 1517137520 c:\users\wangx\documents\code blocks\c\include\singlylinkedlist.h
@@ -57,4 +57,35 @@
 	<stdio.h>
 	<stdlib.h>
 	"SinglyLinkedList.h"
+
+1517214201 source:c:\users\wangx\documents\code blocks\c\signlylinkedlist-main.c
+	<stdio.h>
+	<stdlib.h>
+	"SinglyLinkedList.h"
+
+1517386354 source:c:\users\wangx\documents\code blocks\c\src\mergelist.c
+	"MergeList.h"
+
+1517385557 c:\users\wangx\documents\code blocks\c\include\mergelist.h
+	<stdlib.h>
+	"SinglyLinkedList.h"
+
+1517386380 source:c:\users\wangx\documents\code blocks\c\src\mergesqlist.c
+	"MergeSqList.h"
+
+1517386164 c:\users\wangx\documents\code blocks\c\include\mergesqlist.h
+	<stdlib.h>
+	"SequenceList.h"
+
+1517386423 source:c:\users\wangx\documents\code blocks\c\src\staticlinkedlist.c
+	"StaticLinkedList.h"
+
+1517386408 c:\users\wangx\documents\code blocks\c\include\staticlinkedlist.h
+	<stdlib.h>
+	"StaticLinkedList.h"
+	"Status.h"
+
+1517387046 source:c:\users\wangx\documents\code blocks\c\mergesqlist.main.c
+	<stdio.h>
+	"MergeSqList.h"
 

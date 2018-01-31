@@ -33,7 +33,7 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
-		<Unit filename="SignlyLinkedList.main.c">
+		<Unit filename="MergeSqList.main.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="TestData_HL.txt">
@@ -43,12 +43,16 @@
 			<Option target="&lt;{~None~}&gt;" />
 		</Unit>
 		<Unit filename="include/MergeList.h" />
+		<Unit filename="include/MergeSqList.h" />
 		<Unit filename="include/Scanf.h" />
 		<Unit filename="include/SequenceList.h" />
 		<Unit filename="include/SinglyLinkedList.h" />
 		<Unit filename="include/StaticLinkedList.h" />
 		<Unit filename="include/Status.h" />
 		<Unit filename="src/MergeList.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/MergeSqList.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="src/Scanf.c">

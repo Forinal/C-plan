@@ -154,7 +154,7 @@ int ListDelete_Sq(SqList* L, int i, LElemType_Sq* e)
     L->length--;
 }
 
-int ListTraverse_Sq(SqList L, void(Visit)(LelemType_Sq))
+int ListTraverse_Sq(SqList L, void(Visit)(LElemType_Sq))
 {
     for (int i = 0; i < L.length; i++)
     {
